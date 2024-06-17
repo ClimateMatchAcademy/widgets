@@ -25,7 +25,7 @@
 <br>
 </div>
 
-<span style = "font-size:13pt; color:#313f76; font-weight:bold"><i> CHOOSE YOUR TIMEZONE (based on July 2023):</i></span> <select class="js-Selector" onchange="onChange()" id='timezone'>
+<span style = "font-size:13pt; color:#313f76; font-weight:bold"><i> CHOOSE YOUR TIMEZONE (based on July 2024):</i></span> <select class="js-Selector" onchange="onChange()" id='timezone'>
 </select>
 <br><br>
 <p><span style = "font-size:13pt;"><i> Course times:</i></span></p>
@@ -218,7 +218,7 @@ const _t = (s) => {
     .reduce((memo, tz) => {
       memo.push({
         name: tz,
-        offset: moment("2023-07-11").tz(tz).utcOffset()
+        offset: moment("2024-07-11").tz(tz).utcOffset()
       });
 
       return memo;
@@ -227,7 +227,7 @@ const _t = (s) => {
       return a.offset - b.offset
     })
     .reduce((memo, tz) => {
-      const timezone = tz.offset ? moment("2023-07-11").tz(tz.name).format('Z') : '';
+      const timezone = tz.offset ? moment("2024-07-11").tz(tz.name).format('Z') : '';
 
       return memo.concat(`<option value="${tz.name}">(GMT${timezone}) ${_t(tz.name)}</option>`);
     }, "");
